@@ -21,6 +21,10 @@ BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=tt
 TARGET_BOOTLOADER_CONFIG := imx7d:mx7dsabresdandroid_config
 TARGET_BOARD_DTS_CONFIG := imx7d:imx7d-sdb.dtb
 
+# Bluetooth
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/fsl/sabresd_7d/bluetooth
+
 BOARD_SEPOLICY_DIRS := \
        device/fsl/imx7/sepolicy \
        device/fsl/sabresd_7d/sepolicy
