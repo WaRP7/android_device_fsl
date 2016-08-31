@@ -21,6 +21,25 @@ BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=tt
 TARGET_BOOTLOADER_CONFIG := imx7d:mx7dsabresdandroid_config
 TARGET_BOARD_DTS_CONFIG := imx7d:imx7d-sdb.dtb
 
+# WLAN
+# UNITE is a virtual device support both atheros and realtek wifi(ar6103 and rtl8723as)
+BOARD_WLAN_DEVICE            := UNITE
+WPA_SUPPLICANT_VERSION       := VER_0_8_UNITE
+BOARD_WPA_SUPPLICANT_DRIVER  := NL80211
+BOARD_HOSTAPD_DRIVER         := NL80211
+
+BOARD_HOSTAPD_PRIVATE_LIB_QCOM              := lib_driver_cmd_qcwcn
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB_QCOM       := lib_driver_cmd_qcwcn
+BOARD_HOSTAPD_PRIVATE_LIB_RTL               := lib_driver_cmd_rtl
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB_RTL        := lib_driver_cmd_rtl
+BOARD_HOSTAPD_PRIVATE_LIB_BCM               := lib_driver_cmd_bcmdhd
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB_BCM        := lib_driver_cmd_bcmdhd
+
+WIFI_DRIVER_FW_PATH_STA 	:= "/system/etc/firmware/bcm/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P 	:= "/system/etc/firmware/bcm/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP  	:= "/system/etc/firmware/bcm/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_PARAM 	:= "/sys/module/bcmdhd/parameters/firmware_path"
+
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/fsl/sabresd_7d/bluetooth
