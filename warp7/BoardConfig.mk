@@ -17,9 +17,7 @@ TARGET_BOOTLOADER_BOARD_NAME := WARP7
 PRODUCT_MODEL := WARP7
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/fsl/imx7
-BOARD_KERNEL_CMDLINE := console=ttymxc0,115200 init=/init androidboot.console=ttymxc0 consoleblank=0 androidboot.hardware=freescale 
-TARGET_BOOTLOADER_CONFIG := imx7d:mx7dsabresdandroid_config
-TARGET_BOARD_DTS_CONFIG := imx7d:imx7d-sdb.dtb
+TARGET_NO_KERNEL := true
 
 # WLAN
 # UNITE is a virtual device support both atheros and realtek wifi(ar6103 and rtl8723as)
