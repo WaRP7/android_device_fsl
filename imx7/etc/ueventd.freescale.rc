@@ -11,7 +11,7 @@
 /dev/mxc_ipu              0660   media      system
 /dev/mxc_vpu              0660   media      system
 /dev/uinput               0660   system     bluetooth
-/dev/ttymxc2              0660   system     gps
+/dev/ttymxc5              0660   system     gps
 /dev/ttya0                0660   system     gps
 /dev/ptya0                0660   system     gps
 /dev/ttya1                0660   system     gps
@@ -25,14 +25,14 @@
 /dev/caam_kb              0660   system     system
 
 #sensors sysfs
-/sys/class/misc/Freescale*          name        0660  root   input
-/sys/class/misc/Freescale*          max         0660  root   input
-/sys/class/misc/Freescale*          min         0660  root   input
-/sys/class/misc/Freescale*          poll        0660  root   input
-/sys/class/misc/Freescale*          enable      0660  root   input
-/sys/class/misc/Freescale*          position    0660  root   input
-/sys/class/misc/Freescale*          poll_delay  0660  root   input
-/sys/class/misc/Freescale*          fifo        0660  root   input
+/sys/class/misc/Freescale*          name        0660  system input
+/sys/class/misc/Freescale*          max         0660  system input
+/sys/class/misc/Freescale*          min         0660  system input
+/sys/class/misc/Freescale*          poll        0660  system input
+/sys/class/misc/Freescale*          enable      0660  system input
+/sys/class/misc/Freescale*          position    0660  system input
+/sys/class/misc/Freescale*          poll_delay  0660  system input
+/sys/class/misc/Freescale*          fifo        0660  system input
 /dev/FreescaleAccelerometer                     0660  system input
 /dev/FreescaleMagnetometer                      0660  system input
 /dev/FreescaleGyroscope                         0660  system input

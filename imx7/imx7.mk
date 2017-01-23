@@ -90,6 +90,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	sensors.SABRESD				\
 	sensors.ARM2				\
+	sensors.WARP7 				\
 	sensors.SABREAUTO			\
 	gralloc.imx7				\
 	overlay.imx7				\

@@ -92,6 +92,33 @@ on boot
     chown root system /sys/devices/system/cpu/cpu3/online
     chmod 0664 /sys/devices/system/cpu/cpu3/online
 
+chown system input /sys/class/misc/FreescaleAccelerometer/name
+chown system input /sys/class/misc/FreescaleAccelerometer/max
+chown system input /sys/class/misc/FreescaleAccelerometer/min
+chown system input /sys/class/misc/FreescaleAccelerometer/poll
+chown system input /sys/class/misc/FreescaleAccelerometer/enable
+chown system input /sys/class/misc/FreescaleAccelerometer/position
+chown system input /sys/class/misc/FreescaleAccelerometer/poll_delay
+chown system input /sys/class/misc/FreescaleAccelerometer/fifo
+
+chown system input /sys/class/misc/FreescaleMagnetometer/name
+chown system input /sys/class/misc/FreescaleMagnetometer/max
+chown system input /sys/class/misc/FreescaleMagnetometer/min
+chown system input /sys/class/misc/FreescaleMagnetometer/poll
+chown system input /sys/class/misc/FreescaleMagnetometer/enable
+chown system input /sys/class/misc/FreescaleMagnetometer/position
+chown system input /sys/class/misc/FreescaleMagnetometer/poll_delay
+chown system input /sys/class/misc/FreescaleMagnetometer/fifo
+
+chown system input /sys/class/misc/FreescaleGyroscope/name
+chown system input /sys/class/misc/FreescaleGyroscope/max
+chown system input /sys/class/misc/FreescaleGyroscope/min
+chown system input /sys/class/misc/FreescaleGyroscope/poll
+chown system input /sys/class/misc/FreescaleGyroscope/enable
+chown system input /sys/class/misc/FreescaleGyroscope/position
+chown system input /sys/class/misc/FreescaleGyroscope/poll_delay
+chown system input /sys/class/misc/FreescaleGyroscope/fifo
+
     # prepare for ril
     setprop gsm.ril.delay 15
     setprop ro.ril.wake_lock_timeout 300
@@ -178,3 +205,7 @@ service sensor_fusion /system/bin/fsl_sensor_fusion
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
+    insmod /system/lib/modules/mx6s_capture.ko
+    insmod /system/lib/modules/mxc_mipi_csi.ko
+    insmod /system/lib/modules/ov5640_camera_mipi.ko
+

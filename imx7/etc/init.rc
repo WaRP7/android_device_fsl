@@ -461,8 +461,10 @@ on boot
     setprop wifi.ap.interface wlan0
 
     # Prepare for bluetooth
-    chmod 665 /sys/class/rfkill/rfkill0/state
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 666 /sys/class/rfkill/rfkill0/state
+    #chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     write /sys/class/rfkill/rfkill0/state 0
 
     # Prepare for RIL

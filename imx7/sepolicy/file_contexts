@@ -23,3 +23,7 @@
 /dev/FreescaleAccelerometer     u:object_r:sensors_device:s0
 /dev/FreescaleMagnetometer      u:object_r:sensors_device:s0
 /dev/FreescaleGyroscope         u:object_r:sensors_device:s0
+
+# Bluetooth az
+/sys/class/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
+

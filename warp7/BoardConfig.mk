@@ -11,8 +11,26 @@ BUILD_TARGET_FS ?= ext4
 include device/fsl/imx7/imx7_target_fs.mk
 # build for ext4
 PRODUCT_COPY_FILES +=	\
-	device/fsl/warp7/fstab.freescale:root/fstab.freescale
+	device/fsl/warp7/fstab.freescale:root/fstab.freescale 
 
+#$(info *****************************************************************************************)
+#$(info "please make sure wifi driver: device/fsl/warp7/bluetooth/system/lib/modules/bcmdhd.ko" )
+#$(info "match the kernel,it is copy from kernel_imx/drivers/net/wireless/bcmdhd/bcmdhd.ko ")
+#$(info *****************************************************************************************)
+
+# copy bt/wifi firmware
+PRODUCT_COPY_FILES +=	\
+	device/fsl/warp7/bluetooth/system/etc/firmware/bcm/bcmdhd.1DX.OOB.cal:system/etc/firmware/bcm/bcmdhd.1DX.OOB.cal \
+	device/fsl/warp7/bluetooth/system/etc/firmware/bcm/fw_bcmdhd_mfgtest.bin:system/etc/firmware/bcm/fw_bcmdhd_mfgtest.bin \
+	device/fsl/warp7/bluetooth/system/etc/firmware/bcm/bcmdhd.1DX.SDIO.cal:system/etc/firmware/bcm/bcmdhd.1DX.SDIO.cal \
+	device/fsl/warp7/bluetooth/system/etc/firmware/bcm/BCM43430A1.1DX.hcd:system/etc/firmware/bcm/BCM43430A1.1DX.hcd \
+	device/fsl/warp7/bluetooth/system/etc/bluetooth/bt_stack.conf:system/etc/bluetooth/bt_stack.conf \
+	device/fsl/warp7/bluetooth/system/etc/bluetooth/ble_stack.conf:system/etc/bluetooth/ble_stack.conf \
+	device/fsl/warp7/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
+	device/fsl/warp7/modules/mx6s_capture.ko:system/lib/modules/mx6s_capture.ko \
+	device/fsl/warp7/modules/mxc_mipi_csi.ko:system/lib/modules/mxc_mipi_csi.ko \
+	device/fsl/warp7/modules/ov5640_camera_mipi.ko:system/lib/modules/ov5640_camera_mipi.ko \
+	
 TARGET_BOOTLOADER_BOARD_NAME := WARP7
 PRODUCT_MODEL := WARP7
 
