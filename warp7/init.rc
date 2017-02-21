@@ -202,6 +202,10 @@ service sensor_fusion /system/bin/fsl_sensor_fusion
     group input
     oneshot
 
+service bt_ctl_server /system/bin/bt_ctl_server
+    class late_start
+    oneshot
+
 on fs
 # mount ext4 partitions
     mount_all /fstab.freescale
