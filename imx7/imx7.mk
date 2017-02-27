@@ -1,5 +1,12 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
+
+#rm touch-sound/video-record-sound/camera-click to avoid sound recording noise
+PRODUCT_COPY_FILES += \
+	device/fsl/warp7/null.ogg:system/media/audio/ui/camera_click.ogg \
+	device/fsl/warp7/null.ogg:system/media/audio/ui/VideoRecord.ogg \
+	device/fsl/warp7/null.ogg:system/media/audio/ui/KeypressSpacebar.ogg
+
 $(call inherit-product, $(TOPDIR)frameworks/base/data/sounds/AllAudio.mk)
 # overrides
 PRODUCT_BRAND := Freescale
