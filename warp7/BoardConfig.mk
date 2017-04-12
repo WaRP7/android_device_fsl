@@ -11,6 +11,7 @@ BUILD_TARGET_FS ?= ext4
 include device/fsl/imx7/imx7_target_fs.mk
 # build for ext4
 PRODUCT_COPY_FILES +=	\
+	device/fsl/warp7/modules/startup_fw_update.img:root/lib/firmware/synaptics/startup_fw_update.img \
 	device/fsl/warp7/fstab.freescale:root/fstab.freescale 
 
 #$(info *****************************************************************************************)
