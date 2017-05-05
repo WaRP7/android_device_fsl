@@ -53,7 +53,8 @@ PRODUCT_COPY_FILES += \
 	device/fsl/warp7/required_hardware.xml:system/etc/permissions/required_hardware.xml
 
 # bluetooth power control service
-PRODUCT_PACKAGES += libBtCtl libBtCtlService bt_ctl_server .bt_pwr
+PRODUCT_PACKAGES += libBtCtl libBtCtlService bt_ctl_server .bt_pwr \
+				MagneticCalibraion
 
 PRODUCT_COPY_FILES += \
 device/fsl/warp7/media_profiles.xml:system/etc/media_profiles.xml
